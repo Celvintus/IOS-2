@@ -1,0 +1,31 @@
+import Foundation
+
+let days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+let months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
+
+for i in days {print(i)}
+
+for (i, j) in months.enumerated() {
+print("\(j) \(days[i])")
+}
+
+var tuples = [(String, Int)]();
+
+for (i, j) in days.enumerated() {
+    tuples.append((months[i], j))
+}
+for tuple in tuples {
+    print(tuple)
+}
+
+for tuple in tuples.reversed() {
+    print(tuple)
+}
+
+var Day = 0
+let (month, day) = (0, 20)
+for day in days[0..<month] {
+    Day += day
+}
+print("Дней с начала года до \(day) \(months[month]) - \(Day+day)")
